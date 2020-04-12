@@ -12,15 +12,14 @@ title: "Strassen Algorithm"
 
   행렬 계산법만 아는 사람이라면 누구든지 시간을 투자해서 구할수 있을것이다.
 
-  ex)                                                    
+  ex)                                                     			
 
 
 | 3(A1,1) | 2(A1,2) | -4(B1,1) | -2(B1,2) | -8(C1,1) | -12(C1,2) |
 | :-----: | :-----: | :------: | :------: | :------: | :-------: |
 | 0(A2,1) | 2(A2,2) | 2(B2,1)  | -3(B2,2) | 4(C2,1)  | -6(C2,2)  |
 
-{% highlight ruby %}
-
+```
 (가)
 A,B 가 2X2 행렬 이라고 생각해보면 
 
@@ -32,13 +31,11 @@ C2,1 = A2,1 X B1,1 + A2,2 X B2,1
 
 C2,2 = A2,1 X B1,2 + A2,2 X B2,2 이 된다.
 
-{% endhighlight %}
-
-
+```
 
 이것이 행렬을 구하는 계산법 이다.
 
-​	** (가)에서, 총 8번의 곱셈과 4번의 덧셈이 발생했다. **
+(가)에서, 총 8번의 곱셈과 4번의 덧셈이 발생했다. 
 
 ***
 
@@ -58,8 +55,7 @@ C2,2 = A2,1 X B1,2 + A2,2 X B2,2 이 된다.
 
   스트라센 알고리즘은 우리가 흔히 알고있는, 행렬을 계산하는 방법보다 곱셈 발생 횟수를 줄여서 계산했다.
 
-{% highlight ruby %}
-
+```
 (나)
 
 M1 = (A1,1 + A2,2) x (B1,1 + B2,2)
@@ -75,17 +71,11 @@ M5 = (A1,1 + A1,2) x (B2,2)
 M6 = (A2,1 - A1,1) x (B1,1 + B1,2)
 
 M7 = (A1,2 - A2,2) x (B2,1 + B2,2)
-
-{% endhighlight %}
-
-
+```
 
 (나)를 통해
 
-
-
-{% highlight ruby %}
-
+```
 (다)
 
 C1,1 = M1 + M4 - M5 + M7
@@ -95,10 +85,7 @@ C1,2 = M3 + M5
 C2,1 = M2 + M4
 
 C2,2 = M1 - M2 + M3 + M6
-
-{% endhighlight %}
-
-
+```
 
 (다)라는 결론에 다가갈수 있다.
 
@@ -112,9 +99,9 @@ C2,2 = M1 - M2 + M3 + M6
 
 
 
-![https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgkdfr2qjsuqs.jpg%22&type=w2]
+![https://lh3.googleusercontent.com/L2Lg0e3CcDvNVRKXF6UbuU6gleOSZphrUnCGczXJB56eQz5syyZDA3P2ap_PQBIOokNlrEU=s163]
 
- ![https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgkf5tz3m7lu0.jpg%22&type=w2]
+![https://lh3.googleusercontent.com/SsVc2d9eO71L-xvIDBr_ZKD6GUXhwtipgXL0aJJUMyfZThBFciw6VFlKlVQhgVF1bNQS=s170]
 
 (가) 방법을 수열로 나타낸 것이다. `크기가 n x n인 두 정사각행렬` a,b 의 곱을 c로 나타냈다.
 
@@ -122,13 +109,27 @@ C2,2 = M1 - M2 + M3 + M6
 
 전체 c를 구할 때 곱셈은 n[^3] 번, 덧셈은 n[^2] (n-1)번 하게 된다. 
 
-(나,다) 를 통해서도 점화식을 만들 수 있다. `크기가 n x n의 정사각 행렬의 크기는 2[^k] x 2[^k]이다. `   !(https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgmttx5uq6pap.jpg%22&type=w2)  !(https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgmve7rpku5qa.jpg%22&type=w2)
+(나,다) 를 통해서도 점화식을 만들 수 있다. `크기가 n x n의 정사각 행렬의 크기는 2[^k] x 2[^k]이다. `  
 
-따라서, 행렬의 곱셈은 n/2 x n/2 크기의 행렬을 7번 곱하고, n/2 x n/2크기의 행렬을 18번 더한다. 더하기를 생략하고, 점화식으로 나타내보면 ![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgn49i0ovefhs.jpg%22&type=w2)![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgn4t6hcsos40.jpg%22&type=w2)
+![https://lh3.googleusercontent.com/sXlmJ_v_2ZkiBmImmVqX4I9FI6Z9CJ9qt4ZxDuguuxQLskjh60ZvETCRV-vruo4G4mRU=s85]
 
-![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgmntt48gttax.jpg%22&type=w2)![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgn5g6l0g03ie.jpg%22&type=w2)
+![https://lh3.googleusercontent.com/Yp26SOVqv-PdznDr6PA9fzU_Tw5kKQtWVIUlPrbDNcX2pojx8ALx-qNRoJpjIq0ju9Jt=s102]
 
-이 식을 통해 ![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgnj7vpdn8pdg.jpg%22&type=w2) 인 것을 알 수 있다.
+따라서, 행렬의 곱셈은 n/2 x n/2 크기의 행렬을 7번 곱하고, n/2 x n/2크기의 행렬을 18번 더한다. 더하기를 생략하고, 점화식으로 나타내보면
+
+![https://lh3.googleusercontent.com/4rp9o1zQu6Cx_wrPxYiEPRU94IVLNpOJz0nSgRPmXb7pAzlLk5mJuVnsqDZjtAlhluzk_Q=s170]
+
+![https://lh3.googleusercontent.com/MCiifbrRIjnh-pg0Nnan9WieX9np9V3jqCDxQt7Fr722VVKVnJU2Q5QViidJQKbQUQ5IVw=s165]
+
+![https://lh3.googleusercontent.com/fSpQShFNrmZVC3h3XORqmhwE8o4FHcc__nKK49ZSckUo5_OE_7WBYv_z3Bbt2mM8v9ackw=s26]
+
+![https://lh3.googleusercontent.com/cqEWegY_KLL1bZN_6Efm8VTOzAISUI4QO43dAeR6eGtSMPvXGUr_pQWw0EQCMsuSWYOP=s170]
+
+이 식을 통해
+
+![https://lh3.googleusercontent.com/1LWVul62SzdxnYjLRo875ZbD7b21qagcoyJlMIkQ_BHvb5LEEq3bw5YzPO5bqonl5zyZrw=s117] 
+
+인 것을 알 수 있다.
 
 대략적인 수로 비교해보면 일반적인 행렬 계산법으로는 n[^3]의 효율을 볼 수 있고, 스트라센 알고리즘은 n[^2.807]의 효율을 볼 수 있다. 
 
@@ -141,10 +142,6 @@ C2,2 = M1 - M2 + M3 + M6
 ```
 
 
-
-
-
-{% endhighlight %}
 
 >**스트라센 알고리즘**
 
