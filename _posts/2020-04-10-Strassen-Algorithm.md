@@ -97,7 +97,7 @@ C2,2 = M1 - M2 + M3 + M6
 
   하지만 행렬의 크기가 클때는 곱하기를 하는 시간보다 덧셈뺏셈을 더 하는 시간이 더 효율적일 것이다**((나,다)방법을 사용한다.)** 
 
-![](https://lh3.googleusercontent.com/L2Lg0e3CcDvNVRKXF6UbuU6gleOSZphrUnCGczXJB56eQz5syyZDA3P2ap_PQBIOokNlrEU=s163.jpg)
+![](https://lh3.googleusercontent.com/L2Lg0e3CcDvNVRKXF6UbuU6gleOSZphrUnCGczXJB56eQz5syyZDA3P2ap_PQBIOokNlrEU=s163)
 
 ![](https://lh3.googleusercontent.com/SsVc2d9eO71L-xvIDBr_ZKD6GUXhwtipgXL0aJJUMyfZThBFciw6VFlKlVQhgVF1bNQS=s170)
 
@@ -109,23 +109,23 @@ C2,2 = M1 - M2 + M3 + M6
 
 (나,다) 를 통해서도 점화식을 만들 수 있다. `크기가 n x n의 정사각 행렬의 크기는 2[^k] x 2[^k]이다. `  
 
-![https://lh3.googleusercontent.com/sXlmJ_v_2ZkiBmImmVqX4I9FI6Z9CJ9qt4ZxDuguuxQLskjh60ZvETCRV-vruo4G4mRU=s85.jpg]
+![](https://lh3.googleusercontent.com/sXlmJ_v_2ZkiBmImmVqX4I9FI6Z9CJ9qt4ZxDuguuxQLskjh60ZvETCRV-vruo4G4mRU=s85)
 
-![https://lh3.googleusercontent.com/Yp26SOVqv-PdznDr6PA9fzU_Tw5kKQtWVIUlPrbDNcX2pojx8ALx-qNRoJpjIq0ju9Jt=s102.jpg]
+![](https://lh3.googleusercontent.com/Yp26SOVqv-PdznDr6PA9fzU_Tw5kKQtWVIUlPrbDNcX2pojx8ALx-qNRoJpjIq0ju9Jt=s102)
 
 따라서, 행렬의 곱셈은 n/2 x n/2 크기의 행렬을 7번 곱하고, n/2 x n/2크기의 행렬을 18번 더한다. 더하기를 생략하고, 점화식으로 나타내보면
 
-![https://lh3.googleusercontent.com/4rp9o1zQu6Cx_wrPxYiEPRU94IVLNpOJz0nSgRPmXb7pAzlLk5mJuVnsqDZjtAlhluzk_Q=s170.jpg]
+![](https://lh3.googleusercontent.com/4rp9o1zQu6Cx_wrPxYiEPRU94IVLNpOJz0nSgRPmXb7pAzlLk5mJuVnsqDZjtAlhluzk_Q=s170)	
 
-![https://lh3.googleusercontent.com/MCiifbrRIjnh-pg0Nnan9WieX9np9V3jqCDxQt7Fr722VVKVnJU2Q5QViidJQKbQUQ5IVw=s165.jpg]
+![](https://lh3.googleusercontent.com/MCiifbrRIjnh-pg0Nnan9WieX9np9V3jqCDxQt7Fr722VVKVnJU2Q5QViidJQKbQUQ5IVw=s165)
 
-![https://lh3.googleusercontent.com/fSpQShFNrmZVC3h3XORqmhwE8o4FHcc__nKK49ZSckUo5_OE_7WBYv_z3Bbt2mM8v9ackw=s26.jpg]
+![](https://lh3.googleusercontent.com/fSpQShFNrmZVC3h3XORqmhwE8o4FHcc__nKK49ZSckUo5_OE_7WBYv_z3Bbt2mM8v9ackw=s26)
 
-![https://lh3.googleusercontent.com/cqEWegY_KLL1bZN_6Efm8VTOzAISUI4QO43dAeR6eGtSMPvXGUr_pQWw0EQCMsuSWYOP=s170.jpg]
+![](https://lh3.googleusercontent.com/cqEWegY_KLL1bZN_6Efm8VTOzAISUI4QO43dAeR6eGtSMPvXGUr_pQWw0EQCMsuSWYOP=s170)
 
 이 식을 통해
 
-![https://lh3.googleusercontent.com/1LWVul62SzdxnYjLRo875ZbD7b21qagcoyJlMIkQ_BHvb5LEEq3bw5YzPO5bqonl5zyZrw=s117.jpg] 
+![](https://lh3.googleusercontent.com/1LWVul62SzdxnYjLRo875ZbD7b21qagcoyJlMIkQ_BHvb5LEEq3bw5YzPO5bqonl5zyZrw=s117)
 
 인 것을 알 수 있다.
 
