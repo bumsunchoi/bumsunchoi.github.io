@@ -19,11 +19,7 @@ title: "Strassen Algorithm"
 | :-----: | :-----: | :------: | :------: | :------: | :-------: |
 | 0(A2,1) | 2(A2,2) | 2(B2,1)  | -3(B2,2) | 4(C2,1)  | -6(C2,2)  |
 
-
-
-
-
-~~~A,B 가 2*2  행렬이라고 생각해보면 
+~~~
 
 ~~~
 
@@ -41,8 +37,6 @@ C2,2 = A2,1 X B1,2 + A2,2 X B2,2 이 된다.
 ```
 
 ```
-
-
 
 이것이 행렬을 구하는 계산법 이다.
 
@@ -67,14 +61,27 @@ C2,2 = A2,1 X B1,2 + A2,2 X B2,2 이 된다.
   스트라센 알고리즘은 우리가 흔히 알고있는, 행렬을 계산하는 방법보다 곱셈 발생 횟수를 줄여서 계산했다.
 
 ~~~
+
+~~~
+
 (나)
+
 M1 = (A1,1 + A2,2) x (B1,1 + B2,2)
+
 M2 = (A2,1 + A2,2) x (B1,1)
+
 M3 = (A1,1) x (B1,2 - B2,2)
+
 M4 = (A2,2) x (B2,1 - B1,1)
+
 M5 = (A1,1 + A1,2) x (B2,2)
+
 M6 = (A2,1 - A1,1) x (B1,1 + B1,2)
+
 M7 = (A1,2 - A2,2) x (B2,1 + B2,2)
+
+~~~
+
 ~~~
 
 
@@ -84,27 +91,42 @@ M7 = (A1,2 - A2,2) x (B2,1 + B2,2)
 
 
 ~~~
-(다)
-C1,1 = M1 + M4 - M5 + M7
-C1,2 = M3 + M5
-C2,1 = M2 + M4
-C2,2 = M1 - M2 + M3 + M6
+
 ~~~
+
+(다)
+
+C1,1 = M1 + M4 - M5 + M7
+
+C1,2 = M3 + M5
+
+C2,1 = M2 + M4
+
+C2,2 = M1 - M2 + M3 + M6
+
+```
+
+```
 
 
 
 (다)라는 결론에 다가갈수 있다.
 
 * (나) 와 (다) 를 통해 총 7번의 곱셈과 18번의 덧셈뺏셈이 발생했다는 것을 알 수 있다. 
-* 같은 행렬 계산에서 스트라센 알고리즘 계산 방법을 사용하게 되면 곱하기 계산을 덜 하고 덧셈뺏셈을 더 하게된다.**(곱하기를 덜 하는것보단 덧셈뺏셈을 더 하는 횟수가 많다)** 행렬의 크기가 크지 않을때는 여러번 덧셈뺏셈을 하는것 보다는 까다롭더라도 곱셈을 조금 더 하는것이 효율적일 것이다.**((가) 방법을 사용한다)** 하지만 행렬의 크기가 클때는 곱하기를 하는 시간보다 덧셈뺏셈을 더 하는 시간이 더 효율적일 것이다**((나,다)방법을 사용한다.)** 
+
+* 같은 행렬 계산에서 스트라센 알고리즘 계산 방법을 사용하게 되면 곱하기 계산을 덜 하고 덧셈뺏셈을 더 하게된다.**(곱하기를 덜 하는것보단 덧셈뺏셈을 더 하는 횟수가 많다)**
+
+   행렬의 크기가 크지 않을때는 여러번 덧셈뺏셈을 하는것 보다는 까다롭더라도 곱셈을 조금 더 하는것이 효율적일 것이다.**((가) 방법을 사용한다)** 
+
+  하지만 행렬의 크기가 클때는 곱하기를 하는 시간보다 덧셈뺏셈을 더 하는 시간이 더 효율적일 것이다**((나,다)방법을 사용한다.)** 
 
 
 
 {% highlight ruby %}
 
-​		![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgkdfr2qjsuqs.jpg%22&type=w2)
+![https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgkdfr2qjsuqs.jpg%22&type=w2]
 
- ![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgkf5tz3m7lu0.jpg%22&type=w2)`
+ ![https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgkf5tz3m7lu0.jpg%22&type=w2]
 
 (가) 방법을 수열로 나타낸 것이다. `크기가 n x n인 두 정사각행렬` a,b 의 곱을 c로 나타냈다.
 
@@ -112,7 +134,7 @@ C2,2 = M1 - M2 + M3 + M6
 
 전체 c를 구할 때 곱셈은 n[^3] 번, 덧셈은 n[^2] (n-1)번 하게 된다. 
 
-(나,다) 를 통해서도 점화식을 만들 수 있다. `크기가 n x n의 정사각 행렬의 크기는 2[^k] x 2[^k]이다. `   ![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgmttx5uq6pap.jpg%22&type=w2)  ![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgmve7rpku5qa.jpg%22&type=w2)
+(나,다) 를 통해서도 점화식을 만들 수 있다. `크기가 n x n의 정사각 행렬의 크기는 2[^k] x 2[^k]이다. `   !(https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgmttx5uq6pap.jpg%22&type=w2)  !(https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgmve7rpku5qa.jpg%22&type=w2)
 
 따라서, 행렬의 곱셈은 n/2 x n/2 크기의 행렬을 7번 곱하고, n/2 x n/2크기의 행렬을 18번 더한다. 더하기를 생략하고, 점화식으로 나타내보면 ![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgn49i0ovefhs.jpg%22&type=w2)![img](https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fssl.pstatic.net%2Fimages.se2%2Fsmedit%2F2015%2F10%2F7%2Fifgn4t6hcsos40.jpg%22&type=w2)
 
