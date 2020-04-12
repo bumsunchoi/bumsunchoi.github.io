@@ -97,11 +97,9 @@ C2,2 = M1 - M2 + M3 + M6
 
   하지만 행렬의 크기가 클때는 곱하기를 하는 시간보다 덧셈뺏셈을 더 하는 시간이 더 효율적일 것이다**((나,다)방법을 사용한다.)** 
 
+![](https://lh3.googleusercontent.com/L2Lg0e3CcDvNVRKXF6UbuU6gleOSZphrUnCGczXJB56eQz5syyZDA3P2ap_PQBIOokNlrEU=s163.jpg)
 
-
-![https://lh3.googleusercontent.com/L2Lg0e3CcDvNVRKXF6UbuU6gleOSZphrUnCGczXJB56eQz5syyZDA3P2ap_PQBIOokNlrEU=s163.jpg]
-
-![https://lh3.googleusercontent.com/SsVc2d9eO71L-xvIDBr_ZKD6GUXhwtipgXL0aJJUMyfZThBFciw6VFlKlVQhgVF1bNQS=s170.jpg]
+![](https://lh3.googleusercontent.com/SsVc2d9eO71L-xvIDBr_ZKD6GUXhwtipgXL0aJJUMyfZThBFciw6VFlKlVQhgVF1bNQS=s170)
 
 (가) 방법을 수열로 나타낸 것이다. `크기가 n x n인 두 정사각행렬` a,b 의 곱을 c로 나타냈다.
 
