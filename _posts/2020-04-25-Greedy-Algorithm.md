@@ -35,9 +35,9 @@ title: "Greedy Algorithm"
 
 **어떤 알고리즘을 소개해야 쉽게 그리디 알고리즘에 접근 할 수 있을지를 중점적으로 생각하며 찾은 문제이다.**
 
-출처 : [https://www.acmicpc.net/problem/1138][Baek-Joon]
+출처 : [https://www.acmicpc.net/problem/1138][]
 
-[Baek-Joon]: https://www.acmicpc.net/problem/1138
+[""]: https://www.acmicpc.net/problem/1138
 
 ***
 
