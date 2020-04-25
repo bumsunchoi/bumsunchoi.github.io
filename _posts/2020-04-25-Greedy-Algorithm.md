@@ -37,7 +37,7 @@ title: "Greedy Algorithm"
 
 출처 : [https://www.acmicpc.net/problem/1138][Baek-Joon]
 
-["Baek-Joon"]: https://www.acmicpc.net/problem/1138
+[Baek-Joon]: https://www.acmicpc.net/problem/1138
 
 ***
 
@@ -52,7 +52,10 @@ title: "Greedy Algorithm"
 ### 5. 문제 설명
 
 ```
-예제 입력값과 출력값을 토대로 문제를 설명해보자면 첫 줄에 4과 입력 되어있다. 4의 의미는 사람의 수가 4명이라는 뜻이다 . 2번째 줄에는 2 1 1 0 이 입력 되어 있다. 키가 작은 사람부터 왼쪽에 있는 사람 수를 나타낸 것이다.
+예제 입력값과 출력값을 토대로 문제를 설명해보자면
+첫 줄에 4과 입력 되어있다. 4의 의미는 사람의 수가 
+4명이라는 뜻이다 . 2번째 줄에는 2 1 1 0 이 입력 되어 있다.
+키가 작은 사람부터 왼쪽에 있는 사람 수를 나타낸 것이다.
 ```
 
 1. 키가 1인 사람
